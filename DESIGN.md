@@ -39,7 +39,7 @@ The cold cast against warm gold and oxblood is what makes it read electric. If a
 
 ## The curtain mark
 
-The curtain doesn't reappear outside T-0. Four attempts were tried and cut: a rendered valance and pleated screen edges read as costume department, not brand system; a typographic `)( ` glyph joining film title to timecode worked on its own but competed with the timecode it sat next to; a soft oxblood scallop bled into the top corners of every live screen made the whole app feel busier than the matte-at-rest principle allows, once it was living on every screen rather than a mockup of one. All four are preserved at [playback-room-explorations](https://github.com/beingmtm714/playback-room-explorations) for reference — worth reading before anyone tries a fifth.
+The curtain doesn't reappear outside T-0. Four attempts were tried and cut: a rendered valance and pleated screen edges read as costume department, not brand system; a typographic `)( ` glyph joining film title to timecode worked on its own but competed with the timecode it sat next to; a soft oxblood scallop bled into the top corners of every live screen made the whole app feel busier than the matte-at-rest principle allows, once it was living on every screen rather than a mockup of one. All four are preserved at [projectionist-explorations](https://github.com/beingmtm714/projectionist-explorations) for reference — worth reading before anyone tries a fifth.
 
 Where the film title and timecode pair on screen, they simply sit next to each other, joined by a plain `·`. No custom punctuation, no corner ornament, no residue.
 
