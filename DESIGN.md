@@ -1,4 +1,4 @@
-# The Playback Room — Design Language
+# Projectionist — Design Language
 
 The product recreates a night at the movies: a marquee out front, a lobby full of people, curtains, a dark room, a curator who runs the show. Every visual decision serves that ritual. The system must carry *In the Mood for Love* and *Road House* with equal conviction — test any new surface against both before shipping it.
 
@@ -47,7 +47,7 @@ Where the film title and timecode pair on screen, they simply sit next to each o
 
 - **Archivo Expanded** — title-cards and the marquee. On the board it goes warm bulb-white with a soft incandescent shadow.
 - **Switzer / Hanken Grotesk** — UI.
-- **Source Serif 4** — Liner Notes only. The serif is the curator's voice; chat never gets it.
+- **Source Serif 4** — the curator's voice: Liner Notes, the one-sheet, and her answers in the wrap. Chat never gets it, and neither does any interface label.
 - **JetBrains Mono** — timecode, countdowns, labels, anything that ticks.
 
 ## The chat rule
