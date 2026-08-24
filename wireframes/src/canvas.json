@@ -1,0 +1,142 @@
+{
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Curator tools (V1)"
+    },
+    {
+      "id": "page-2",
+      "name": "The audience (V2)"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "page": "page-1",
+      "x": 0,
+      "y": 0,
+      "w": 900,
+      "h": 660
+    },
+    {
+      "file": "CuratorPrep.dc.html",
+      "page": "page-1",
+      "x": 0,
+      "y": 760,
+      "w": 2340,
+      "h": 800
+    },
+    {
+      "file": "CuratorNotes.dc.html",
+      "page": "page-1",
+      "x": 0,
+      "y": 1660,
+      "w": 2340,
+      "h": 800
+    },
+    {
+      "file": "CuratorQueue.dc.html",
+      "page": "page-1",
+      "x": 0,
+      "y": 2560,
+      "w": 2340,
+      "h": 800
+    },
+    {
+      "file": "CuratorLive.dc.html",
+      "page": "page-1",
+      "x": 0,
+      "y": 3460,
+      "w": 2340,
+      "h": 800
+    },
+    {
+      "file": "CuratorShip.dc.html",
+      "page": "page-1",
+      "x": 0,
+      "y": 4360,
+      "w": 1220,
+      "h": 800
+    },
+    {
+      "file": "Discover.dc.html",
+      "page": "page-2",
+      "x": 0,
+      "y": 0,
+      "w": 2680,
+      "h": 960
+    },
+    {
+      "file": "TheNight.dc.html",
+      "page": "page-2",
+      "x": 0,
+      "y": 1060,
+      "w": 3920,
+      "h": 960
+    },
+    {
+      "file": "TheRoom.dc.html",
+      "page": "page-2",
+      "x": 0,
+      "y": 2120,
+      "w": 1620,
+      "h": 960
+    },
+    {
+      "file": "AfterTheShow.dc.html",
+      "page": "page-2",
+      "x": 1720,
+      "y": 2120,
+      "w": 1200,
+      "h": 960
+    }
+  ],
+  "annotations": [
+    {
+      "id": "audience-page",
+      "x": 980,
+      "y": 320,
+      "w": 300,
+      "text": "The audience side is page two.\n\nOpen the pages menu in the toolbar and pick \"The audience (V2)\": onboarding, the Marquee, the session page and the two prompts, the nine beats of the night, the three room layouts, the recap and the Taste Passport.\n\nThat page is what a curator's audience actually sees."
+    },
+    {
+      "id": "v1-scope",
+      "x": 980,
+      "y": 60,
+      "w": 300,
+      "text": "V1 is everything on this page. Five design partners get exactly this, with no audience on the other end, and two weeks to break it."
+    },
+    {
+      "id": "new-screens",
+      "x": 1360,
+      "y": 4360,
+      "w": 300,
+      "text": "1J8 and 1J9 are new since the 6 Aug call. The share link is the first link in the whole chain. The dry run is what makes a curator beta possible before an audience exists."
+    },
+    {
+      "id": "note-editor",
+      "x": 2400,
+      "y": 1660,
+      "w": 300,
+      "text": "1J4 is the screen the product lives or dies on. Manual mm:ss never goes away. Screenshot and natural language write into it, and both can say they are not sure."
+    },
+    {
+      "id": "companion",
+      "x": 2320,
+      "y": 60,
+      "w": 300,
+      "text": "Projectionist never touches the film. No player, no rights, no integration. The whole catalogue of cinema is available on day one."
+    },
+    {
+      "id": "design-fixes",
+      "x": 4020,
+      "y": 1060,
+      "w": 300,
+      "text": "Chat handles are paper, never marquee gold: gold belongs to the pre-show and never appears mid-film. Film title and position sit on every live surface. Silver and its glow appear only where something is genuinely live."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "page-1"
+  }
+}

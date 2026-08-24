@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>CuratorShip · Projectionist wireframes</title>
+<meta name="description" content="The share link, and how it looks when you post it.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Source+Serif+4:opsz,wght@8..60,300..600&display=swap">
+<link rel="stylesheet" href="../kit.css">
+<style>
+  body{background:#0b0b0e}
+  .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:16px;
+    padding:11px 16px;background:#e7e3da;color:#1a1917;border-bottom:1px solid rgba(0,0,0,.12)}
+  .bar a{color:#57534a}
+  .bar a:hover{color:#a01a86}
+  .bar .who{flex:1;min-width:0;display:flex;align-items:baseline;gap:10px}
+  .bar .name{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-weight:700;
+    font-size:14px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+  .bar .ids{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;
+    letter-spacing:.12em;color:#8a8477;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .back,.bar .zoom{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+  .zoom{border:1px solid rgba(0,0,0,.2);border-radius:999px;background:transparent;color:#57534a;
+    padding:5px 11px;cursor:pointer;font-family:inherit}
+  .zoom:hover{color:#a01a86;border-color:#a01a86}
+  .memo{background:#14110b;color:#b8a77f;padding:12px 16px;font-family:'Source Serif 4',Georgia,serif;
+    font-size:14.5px;line-height:1.5;border-bottom:1px solid #453a26}
+  .memo summary{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:#8a7c5c;cursor:pointer}
+  .memo[open] summary{margin-bottom:10px}
+  .memo p{margin:0 0 9px;max-width:70ch}
+  .memo p:last-child{margin:0}
+  .stage{padding:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .art{transform-origin:top left}
+  .pager{display:flex;justify-content:space-between;gap:16px;padding:16px 16px 40px;
+    font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase}
+  .pager span{color:#3a382f}
+  @media (max-width:520px){.bar .ids{display:none}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="back" href="../">← Boards</a>
+  <div class="who"><span class="name">CuratorShip</span><span class="ids">1J8</span></div>
+  <button class="zoom" id="zoom" type="button">Actual size</button>
+</header>
+<details class="memo" id="memo" open><summary>1 note on this board</summary><p>1J8 and 1J9 are new since the 6 Aug call. The share link is the first link in the whole chain. The dry run is what makes a curator beta possible before an audience exists.</p></details>
+<div class="stage" id="stage">
+  <div class="art" id="art" data-w="1220" data-h="800">
+<div style="background:#0b0b0e;padding:44px;display:flex;gap:44px;align-items:flex-start">
+  <div>
+    <div class="cap" style="margin-bottom:12px"><span class="sid" style="color:var(--silver)">1J8</span> &nbsp; Session ready, and the share link <span style="color:var(--silver)">&middot; new</span></div>
+    <div class="desk">
+      <div style="flex:1;padding:34px 38px;display:flex;flex-direction:column;border-right:1px solid var(--hair)">
+        <div style="font-size:22px;font-weight:600">Session ready</div>
+        <div style="font-size:13px;color:var(--dim);margin-top:5px">Everything is in and it works. Now go fill the room.</div>
+
+        <div style="margin-top:26px;display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--hair);font-size:14px"><span style="color:var(--dim)">Film</span><span>In the Mood for Love, 2000</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--hair);font-size:14px"><span style="color:var(--dim)">Showtime</span><span>Thu 21 Aug, 8:00PM &middot; doors 7:30</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--hair);font-size:14px"><span style="color:var(--dim)">Liner Notes</span><span>6 armed, 1 with a still</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--hair);font-size:14px"><span style="color:var(--dim)">Intermission</span><span>15 minutes at 0:55</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:14px"><span style="color:var(--dim)">Rehearsed</span><span>Yes, twice</span></div>
+        </div>
+
+        <div class="cap" style="margin-top:26px;margin-bottom:10px">Your link</div>
+        <div style="display:flex;gap:10px">
+          <div class="mono" style="flex:1;border:1px solid var(--paper);border-radius:6px;padding:13px 15px;font-size:13px">projection.ist/naomi/in-the-mood</div>
+          <div class="btnp" style="width:100px;padding:13px">Copy</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <div class="btn" style="flex:1;padding:10px">Share</div>
+          <div class="btn" style="flex:1;padding:10px">Post to Instagram</div>
+          <div class="btn" style="flex:1;padding:10px">Add to your Marquee</div>
+        </div>
+        <div style="margin-top:auto;padding-top:18px;font-size:11px;color:var(--dimmer);line-height:1.55">This link is the first thing in the whole chain. Everything the audience does starts here.</div>
+      </div>
+
+      <div style="width:330px;padding:34px 26px;flex-shrink:0;display:flex;flex-direction:column">
+        <div class="cap" style="margin-bottom:14px">How it looks when you post it</div>
+        <div style="border:1px solid var(--hair);border-radius:9px;overflow:hidden">
+          <div style="height:120px;background:var(--goldbg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px">
+            <div class="marq" style="font-size:15px;color:var(--gold);text-align:center;line-height:1.2">IN THE MOOD<br>FOR LOVE</div>
+            <div class="cap" style="font-size:8px;color:var(--gold);opacity:.7">THU 8:00PM &middot; HOSTED BY NAOMI</div>
+          </div>
+          <div style="padding:13px 14px">
+            <div style="font-size:13px;font-weight:600">A screening with Naomi</div>
+            <div style="font-size:12px;color:var(--dim);margin-top:5px;line-height:1.45">Watch it on your own TV. My notes land on your phone.</div>
+            <div class="cap" style="font-size:9px;margin-top:9px;color:var(--dimmer)">projection.ist</div>
+          </div>
+        </div>
+        <div style="margin-top:22px;font-size:12px;color:var(--dim);line-height:1.55">Anyone who taps it lands on the session page and reserves a seat. No account, no install.</div>
+        <div style="margin-top:auto">
+          <div class="cap" style="margin-bottom:8px">Then</div>
+          <div style="font-size:12px;color:var(--dimmer);line-height:1.8">Doors open 7:30<br>The house calls at 7:50<br>Curtains at 8:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<nav class="pager"><a href="./CuratorLive.html">← CuratorLive</a><a href="./Discover.html">Discover →</a></nav>
+<script>
+(function(){
+  var art=document.getElementById('art'),stage=document.getElementById('stage'),
+      btn=document.getElementById('zoom');
+  if(!art||!stage||!btn){return}
+  var W=parseInt(art.getAttribute('data-w'),10),H=parseInt(art.getAttribute('data-h'),10);
+  function fit(){try{return Math.min(1,(stage.clientWidth-32)/W)}catch(e){return 1}}
+  // A board shrunk past a third of its size is a shape, not a screen you can read,
+  // so a phone opens the wide boards at 1:1 and scrolls them sideways instead.
+  var actual=fit()<0.35;
+  function apply(){
+    try{
+      btn.textContent=actual?'Fit to screen':'Actual size';
+      if(actual){art.style.transform='';stage.style.height='';return}
+      var s=fit();
+      art.style.transform='scale('+s+')';
+      // Some boards run a little past their declared height; measure, don't assume,
+      // or the scaled board gets clipped by the stage.
+      stage.style.height=Math.ceil(Math.max(H,art.scrollHeight)*s)+'px';
+    }catch(e){}
+  }
+  btn.addEventListener('click',function(){
+    actual=!actual;apply();
+    if(actual){window.scrollTo(0,0)}
+  });
+  window.addEventListener('resize',apply);
+  apply();
+  // The board is what you came for; on a phone the notes start folded away.
+  try{
+    var memo=document.getElementById('memo');
+    if(memo&&window.innerWidth<700){memo.removeAttribute('open')}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
