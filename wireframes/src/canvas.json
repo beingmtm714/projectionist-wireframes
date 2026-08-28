@@ -55,7 +55,7 @@
       "page": "page-1",
       "x": 0,
       "y": 4360,
-      "w": 1220,
+      "w": 2340,
       "h": 800
     },
     {
@@ -108,10 +108,10 @@
     },
     {
       "id": "new-screens",
-      "x": 1360,
+      "x": 2400,
       "y": 4360,
       "w": 300,
-      "text": "1J8 and 1J9 are new since the 6 Aug call. The share link is the first link in the whole chain. The dry run is what makes a curator beta possible before an audience exists."
+      "text": "1J8 and 1J9 are new since the 6 Aug call. The promo kit is where reach becomes reservations, and its tracked links are the only way we ever learn the conversion rate the whole business turns on. The dry run is what makes a curator beta possible before an audience exists."
     },
     {
       "id": "note-editor",
