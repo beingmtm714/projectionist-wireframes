@@ -38,6 +38,8 @@ BOARDS = {
     "Discover": ("1E–1G", "Onboarding, the Marquee, the session page and the two prompts."),
     "TheNight": ("1D1–1D9", "The nine beats of the night."),
     "TheRoom": ("1A–1C", "One screen, three ways."),
+    "MarqueeA": ("1F · Direction A", "The Marquee in house-up light: warm ambient, no bulbs, one cold live signal."),
+    "TheRoomA": ("1C · Direction A", "The Room in house-down light, and a Liner Note lit because the beam is on it."),
     "AfterTheShow": ("1H–1I", "The recap, Film DNA, and the Taste Passport."),
 }
 

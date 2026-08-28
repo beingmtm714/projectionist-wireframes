@@ -7,6 +7,10 @@
     {
       "id": "page-2",
       "name": "The audience (V2)"
+    },
+    {
+      "id": "page-3",
+      "name": "Direction A (test)"
     }
   ],
   "artboards": [
@@ -97,6 +101,22 @@
       "y": 4180,
       "w": 920,
       "h": 1040
+    },
+    {
+      "file": "MarqueeA.dc.html",
+      "page": "page-3",
+      "x": 0,
+      "y": 0,
+      "w": 780,
+      "h": 920
+    },
+    {
+      "file": "TheRoomA.dc.html",
+      "page": "page-3",
+      "x": 880,
+      "y": 0,
+      "w": 1180,
+      "h": 920
     }
   ],
   "annotations": [
@@ -105,35 +125,40 @@
       "x": 980,
       "y": 320,
       "w": 300,
-      "text": "The audience side is page two.\n\nOpen the pages menu in the toolbar and pick \"The audience (V2)\": onboarding, the Marquee, the session page and the two prompts, the nine beats of the night, the three room layouts, the recap and the Taste Passport.\n\nThat page is what a curator's audience actually sees."
+      "text": "The audience side is page two.\n\nOpen the pages menu in the toolbar and pick \"The audience (V2)\": onboarding, the Marquee, the session page and the two prompts, the nine beats of the night, the three room layouts, the recap and the Taste Passport.\n\nThat page is what a curator's audience actually sees.",
+      "page": "page-1"
     },
     {
       "id": "v1-scope",
       "x": 980,
       "y": 60,
       "w": 300,
-      "text": "V1 is everything on this page. Five design partners get exactly this, with no audience on the other end, and two weeks to break it."
+      "text": "V1 is everything on this page. Five design partners get exactly this, with no audience on the other end, and two weeks to break it.",
+      "page": "page-1"
     },
     {
       "id": "new-screens",
       "x": 3100,
       "y": 5320,
       "w": 300,
-      "text": "1J8 and 1J9 are new since the 6 Aug call. The promo kit is where reach becomes reservations, and its tracked links are the only way we ever learn the conversion rate the whole business turns on. The dry run is what makes a curator beta possible before an audience exists."
+      "text": "1J8 and 1J9 are new since the 6 Aug call. The promo kit is where reach becomes reservations, and its tracked links are the only way we ever learn the conversion rate the whole business turns on. The dry run is what makes a curator beta possible before an audience exists.",
+      "page": "page-1"
     },
     {
       "id": "note-editor",
       "x": 3100,
       "y": 1900,
       "w": 300,
-      "text": "1J4 is the screen the product lives or dies on. Manual mm:ss never goes away. Screenshot and natural language write into it, and both can say they are not sure."
+      "text": "1J4 is the screen the product lives or dies on. Manual mm:ss never goes away. Screenshot and natural language write into it, and both can say they are not sure.",
+      "page": "page-1"
     },
     {
       "id": "companion",
       "x": 2320,
       "y": 60,
       "w": 300,
-      "text": "Projectionist never touches the film. No player, no rights, no integration. The whole catalogue of cinema is available on day one."
+      "text": "Projectionist never touches the film. No player, no rights, no integration. The whole catalogue of cinema is available on day one.",
+      "page": "page-1"
     },
     {
       "id": "design-fixes",
@@ -142,10 +167,42 @@
       "w": 300,
       "text": "Chat handles are paper, never marquee gold: gold belongs to the pre-show and never appears mid-film. Film title and position sit on every live surface. Silver and its glow appear only where something is genuinely live.",
       "page": "page-2"
+    },
+    {
+      "id": "a-consequence",
+      "page": "page-3",
+      "x": 0,
+      "y": 1020,
+      "w": 340,
+      "text": "CONSEQUENCE OF THE NEW SEQUENCE\n\nThe spec has house calls at T-10 and T-1. The two-minute notification replaces the T-1 call, and it should: at T-1 the curtain appears, and that is a better one-minute call than a notification. It is visible, it needs no permission, and it cannot be missed by someone already looking at the screen.\n\nCalls become T-10 and T-2. The curtain makes the last call itself."
+    },
+    {
+      "id": "a-choreo-1",
+      "page": "page-3",
+      "x": 380,
+      "y": 1020,
+      "w": 340,
+      "text": "CHOREOGRAPHY 1 \u2014 THE CHAT DROP\n\nAt T-0:20 two things move at once: chat goes from full screen to a strip, and the curtain begins to part behind it. Together they read as a glitch.\n\nSettle the chat first, over about a second, and begin the parting as it lands. One cue, then the next, rather than both at once."
+    },
+    {
+      "id": "a-choreo-2",
+      "page": "page-3",
+      "x": 760,
+      "y": 1020,
+      "w": 340,
+      "text": "CHOREOGRAPHY 2 \u2014 CURTAIN TRAVEL\n\nTwenty to fifteen is five seconds for a full curtain travel. Real curtains take eight to twelve, and a fast curtain reads as cheap in a way that is hard to name and easy to feel.\n\nStart the part at T-0:25 so the movement is unhurried and still lands fully open at T-0:15, when the leader begins."
+    },
+    {
+      "id": "a-thesis",
+      "page": "page-3",
+      "x": 1140,
+      "y": 1020,
+      "w": 340,
+      "text": "WHAT THE PAIR IS TESTING\n\nWhether two lighting states can carry the whole system where three temperatures used to.\n\nSquint at both boards. House up should read as the same building as house down, at a different time of night. If either reads as a different place, the model is wrong and no amount of token tuning fixes it."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-1"
+    "page": "page-3"
   }
 }
