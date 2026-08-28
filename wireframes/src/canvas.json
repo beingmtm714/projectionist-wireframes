@@ -23,40 +23,40 @@
       "page": "page-1",
       "x": 0,
       "y": 760,
-      "w": 2340,
-      "h": 800
+      "w": 3020,
+      "h": 1040
     },
     {
       "file": "CuratorNotes.dc.html",
       "page": "page-1",
       "x": 0,
-      "y": 1660,
-      "w": 2340,
-      "h": 800
+      "y": 1900,
+      "w": 3020,
+      "h": 1040
     },
     {
       "file": "CuratorQueue.dc.html",
       "page": "page-1",
       "x": 0,
-      "y": 2560,
-      "w": 2340,
-      "h": 800
+      "y": 3040,
+      "w": 3020,
+      "h": 1040
     },
     {
       "file": "CuratorLive.dc.html",
       "page": "page-1",
       "x": 0,
-      "y": 3460,
-      "w": 2340,
-      "h": 800
+      "y": 4180,
+      "w": 3020,
+      "h": 1040
     },
     {
       "file": "CuratorShip.dc.html",
       "page": "page-1",
       "x": 0,
-      "y": 4360,
-      "w": 2340,
-      "h": 800
+      "y": 5320,
+      "w": 3020,
+      "h": 1040
     },
     {
       "file": "Discover.dc.html",
@@ -108,15 +108,15 @@
     },
     {
       "id": "new-screens",
-      "x": 2400,
-      "y": 4360,
+      "x": 3100,
+      "y": 5320,
       "w": 300,
       "text": "1J8 and 1J9 are new since the 6 Aug call. The promo kit is where reach becomes reservations, and its tracked links are the only way we ever learn the conversion rate the whole business turns on. The dry run is what makes a curator beta possible before an audience exists."
     },
     {
       "id": "note-editor",
-      "x": 2400,
-      "y": 1660,
+      "x": 3100,
+      "y": 1900,
       "w": 300,
       "text": "1J4 is the screen the product lives or dies on. Manual mm:ss never goes away. Screenshot and natural language write into it, and both can say they are not sure."
     },
@@ -132,7 +132,8 @@
       "x": 4020,
       "y": 1060,
       "w": 300,
-      "text": "Chat handles are paper, never marquee gold: gold belongs to the pre-show and never appears mid-film. Film title and position sit on every live surface. Silver and its glow appear only where something is genuinely live."
+      "text": "Chat handles are paper, never marquee gold: gold belongs to the pre-show and never appears mid-film. Film title and position sit on every live surface. Silver and its glow appear only where something is genuinely live.",
+      "page": "page-2"
     }
   ],
   "launch": {
