@@ -7,10 +7,6 @@
     {
       "id": "page-2",
       "name": "The audience (V2)"
-    },
-    {
-      "id": "page-3",
-      "name": "Direction A (test)"
     }
   ],
   "artboards": [
@@ -101,22 +97,6 @@
       "y": 4180,
       "w": 920,
       "h": 1040
-    },
-    {
-      "file": "MarqueeA.dc.html",
-      "page": "page-3",
-      "x": 0,
-      "y": 0,
-      "w": 780,
-      "h": 920
-    },
-    {
-      "file": "TheRoomA.dc.html",
-      "page": "page-3",
-      "x": 880,
-      "y": 0,
-      "w": 1180,
-      "h": 920
     }
   ],
   "annotations": [
@@ -169,40 +149,16 @@
       "page": "page-2"
     },
     {
-      "id": "a-consequence",
-      "page": "page-3",
-      "x": 0,
-      "y": 1020,
-      "w": 340,
-      "text": "CONSEQUENCE OF THE NEW SEQUENCE\n\nThe spec has house calls at T-10 and T-1. The two-minute notification replaces the T-1 call, and it should: at T-1 the curtain appears, and that is a better one-minute call than a notification. It is visible, it needs no permission, and it cannot be missed by someone already looking at the screen.\n\nCalls become T-10 and T-2. The curtain makes the last call itself."
-    },
-    {
-      "id": "a-choreo-1",
-      "page": "page-3",
-      "x": 380,
-      "y": 1020,
-      "w": 340,
-      "text": "CHOREOGRAPHY 1 \u2014 THE CHAT DROP\n\nAt T-0:20 two things move at once: chat goes from full screen to a strip, and the curtain begins to part behind it. Together they read as a glitch.\n\nSettle the chat first, over about a second, and begin the parting as it lands. One cue, then the next, rather than both at once."
-    },
-    {
-      "id": "a-choreo-2",
-      "page": "page-3",
-      "x": 760,
-      "y": 1020,
-      "w": 340,
-      "text": "CHOREOGRAPHY 2 \u2014 CURTAIN TRAVEL\n\nTwenty to fifteen is five seconds for a full curtain travel. Real curtains take eight to twelve, and a fast curtain reads as cheap in a way that is hard to name and easy to feel.\n\nStart the part at T-0:25 so the movement is unhurried and still lands fully open at T-0:15, when the leader begins."
-    },
-    {
-      "id": "a-thesis",
-      "page": "page-3",
-      "x": 1140,
-      "y": 1020,
-      "w": 340,
-      "text": "WHAT THE PAIR IS TESTING\n\nWhether two lighting states can carry the whole system where three temperatures used to.\n\nSquint at both boards. House up should read as the same building as house down, at a different time of night. If either reads as a different place, the model is wrong and no amount of token tuning fixes it."
+      "id": "lighting",
+      "page": "page-2",
+      "x": 4020,
+      "y": 1060,
+      "w": 320,
+      "text": "TWO LIGHTING STATES\n\nHouse up is warm ambient from above with no visible source. House down is one cold key from above and behind, the way a projector sits over your shoulder.\n\nSquint at any two boards from opposite states. They must read as the same building at a different time of night.\n\nGrain, scratches and dust are projected light only: the leader, the curtain wash, T-0. Never a resting surface."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-3"
+    "page": "page-1"
   }
 }
