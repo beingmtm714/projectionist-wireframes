@@ -16,7 +16,7 @@
       "x": 0,
       "y": 0,
       "w": 900,
-      "h": 660
+      "h": 700
     },
     {
       "file": "CuratorPrep.dc.html",
@@ -113,7 +113,7 @@
       "x": 980,
       "y": 60,
       "w": 300,
-      "text": "V1 is everything on this page. Five design partners get exactly this, with no audience on the other end, and two weeks to break it.",
+      "text": "V1 is this page minus the research agent and AI timestamping, which come after the raise. Five design partners get the rest, with no audience on the other end, and two weeks to break it.",
       "page": "page-1"
     },
     {

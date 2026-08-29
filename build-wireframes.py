@@ -28,7 +28,7 @@ FONTS = ("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400
 
 # Screen IDs and a line of description per board, in canvas order within a page.
 BOARDS = {
-    "Main": ("Cover", "The premise, the three temperatures, and how to read the deck."),
+    "Main": ("Cover", "The premise, the two lighting states, and how to read the boards."),
     "CuratorPrep": ("1J1–1J2", "Prep home, and the research agent that reads around the film."),
     "CuratorNotes": ("1J3–1J4", "Findings into notes, and the note editor the product lives or dies on."),
     "CuratorQueue": ("1J5–1J6", "The note queue, and going live."),
@@ -74,6 +74,7 @@ NOTE_BOARD = {
     "note-editor": "CuratorNotes.dc.html",
     "new-screens": "CuratorShip.dc.html",
     "design-fixes": "TheNight.dc.html",
+    "lighting": "Main.dc.html",
 }
 
 
@@ -309,7 +310,7 @@ def index_page(canvas, pages):
     <div class="bulbs"></div>
   </div>
 
-  <p class="lede">Curator tools are V1: five design partners get exactly that page, with no audience on the other end. The audience side is V2. Open a board on its own page. The toggle in the bar swaps between fitting the board to your screen and its full size, and the wide boards open full size on a phone so the type stays readable.</p>
+  <p class="lede">Curator tools are V1, minus the research agent and AI timestamping, which come after the raise. Five design partners get the rest, with no audience on the other end. The audience side is V2. Open a board on its own page. The toggle in the bar swaps between fitting the board to your screen and its full size, and the wide boards open full size on a phone so the type stays readable.</p>
 
 {chr(10).join(sections)}
 </main>
