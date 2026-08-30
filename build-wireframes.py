@@ -351,7 +351,7 @@ def index_page(canvas, pages):
     <div class="bulbs"></div>
   </div>
 
-  <p class="lede">Curator tools are V1, minus the research agent and AI timestamping, which come after the raise. Five design partners get the rest, with no audience on the other end. The audience side is V2. <a href="../docs/">The written documents are here</a>. Open a board on its own page. The toggle in the bar swaps between fitting the board to your screen and its full size, and the wide boards open full size on a phone so the type stays readable.</p>
+  <p class="lede">Curator tools are V1, minus the research agent and AI timestamping, which come after the raise. Five design partners get the rest, with no audience on the other end. The audience side is V2. Open a board on its own page. The toggle in the bar swaps between fitting the board to your screen and its full size, and the wide boards open full size on a phone so the type stays readable.</p>
 
 {chr(10).join(sections)}
 </main>
