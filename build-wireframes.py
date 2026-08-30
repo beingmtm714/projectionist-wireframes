@@ -30,14 +30,14 @@ FONTS = ("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400
 BOARDS = {
     "Main": ("Cover", "The premise, the two lighting states, and how to read the boards."),
     "CuratorPrep": ("1J1–1J2", "Prep home, and the research agent that reads around the film."),
-    "CuratorNotes": ("1J3–1J4", "Findings into notes, and the note editor the product lives or dies on."),
+    "CuratorNotes": ("1J3–1J4", "Findings into notes, and the editor where a note gets pinned to a moment."),
     "CuratorQueue": ("1J5–1J6", "The note queue, and going live."),
     "CuratorLive": ("1J7 · 1J9", "On air, and the dry run."),
     "CuratorPhone": ("1J6 · 1J7 on a phone", "The two curator screens that are not desktop, because hosting happens with the film on the TV."),
     "CuratorShip": ("1J8", "The promo kit, and where the room came from."),
     "Discover": ("1E–1G", "Onboarding, the Marquee, the session page and the two prompts."),
     "TheNight": ("1D1–1D9", "The nine beats of the night."),
-    "TheRoom": ("1A–1C", "One screen, three ways, and a note lit because the beam is on it."),
+    "TheRoom": ("1A–1C", "The screen you hold during the film, and what happens when a note arrives."),
     "AfterTheShow": ("1H–1I", "The recap, Film DNA, and the Taste Passport."),
 }
 
@@ -66,15 +66,23 @@ def kit_css():
 # on whichever page-two board happens to sit under it. An unlisted note falls
 # back to the nearest board and says so.
 NOTE_BOARD = {
-    "v1-scope": "Main.dc.html",
-    # Canvas navigation, not design content: it tells you to switch pages in the
+    # Every note is mapped by hand. A note that is not listed here gets attached to
+    # whichever board it happens to sit nearest on the canvas, which is how the
+    # lighting note once ended up on TheNight.
+    "board-main": "Main.dc.html",
+    "board-curatorprep": "CuratorPrep.dc.html",
+    "board-curatornotes": "CuratorNotes.dc.html",
+    "board-curatorqueue": "CuratorQueue.dc.html",
+    "board-curatorlive": "CuratorLive.dc.html",
+    "board-curatorphone": "CuratorPhone.dc.html",
+    "board-curatorship": "CuratorShip.dc.html",
+    "board-discover": "Discover.dc.html",
+    "board-thenight": "TheNight.dc.html",
+    "board-theroom": "TheRoom.dc.html",
+    "board-aftertheshow": "AfterTheShow.dc.html",
+    # Canvas navigation, not board content: it tells you to switch pages in the
     # canvas toolbar, which these pages do not have. The index lists both pages.
     "audience-page": None,
-    "companion": "Main.dc.html",
-    "note-editor": "CuratorNotes.dc.html",
-    "new-screens": "CuratorShip.dc.html",
-    "design-fixes": "TheNight.dc.html",
-    "lighting": "Main.dc.html",
 }
 
 

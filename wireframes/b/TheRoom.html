@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>TheRoom · Projectionist wireframes</title>
-<meta name="description" content="One screen, three ways, and a note lit because the beam is on it.">
+<meta name="description" content="The screen you hold during the film, and what happens when a note arrives.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Source+Serif+4:opsz,wght@8..60,300..600&display=swap">
 <link rel="stylesheet" href="../kit.css">
 <style>
@@ -50,12 +50,13 @@
   <div class="who"><span class="name">TheRoom</span><span class="ids">1A–1C</span></div>
   <button class="zoom" id="zoom" type="button">Actual size</button>
 </header>
-
+<details class="memo" id="memo" open><summary>1 note on this board</summary><p>The screen you hold during the film. Two states are drawn here: the room before a note arrives, and the moment one does.</p>
+<p>Two other layouts sit behind this one, reached by swiping. The full run of notes so far, for rereading. And one note at a time, for anyone who wants the room quiet.</p></details>
 <div class="stage" id="stage">
   <div class="art" id="art" data-w="1620" data-h="960">
 <div style="background:#0b0b0e;padding:44px;display:flex;gap:26px;align-items:flex-start">
   <div>
-    <div class="cap" style="margin-bottom:12px"><span class="sid">1C</span> The Room &middot; house down, before a note</div>
+    <div class="cap" style="margin-bottom:12px"><span class="sid">1C</span> The Room &middot; before a note</div>
     <div class="phone dn">
       <div style="position:relative;padding:18px 20px;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--hair)">
         <div class="livedot"></div>
@@ -78,7 +79,7 @@
   </div>
 
   <div>
-    <div class="cap" style="margin-bottom:12px"><span class="sid">1C</span> A Liner Note arrives &middot; the beam is on it</div>
+    <div class="cap" style="margin-bottom:12px"><span class="sid">1C</span> A Liner Note arrives</div>
     <div class="phone dn">
       <div style="position:relative;padding:18px 20px;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--hair)">
         <div class="livedot"></div>
@@ -103,10 +104,10 @@
   </div>
 
   <div style="width:260px;padding-top:38px">
-    <div class="cap" style="margin-bottom:12px">House down</div>
-    <div style="font-size:13px;line-height:1.6;color:var(--dim)">One cold key from above and behind, the way a projector sits over your shoulder. Everything falls off toward the bottom of the screen.</div>
-    <div style="font-size:13px;line-height:1.6;color:var(--dim);margin-top:15px">Chat lives in the deepest part of that falloff, which is right: it is the murmur of the room. When a note fires the beam moves onto it, chat drops to a strip, and the note is the brightest thing on the surface because it is the thing being lit.</div>
-    <div style="font-size:13px;line-height:1.6;color:var(--dimmer);margin-top:15px">No grain here. The film is running on the television; this is a companion, not a projection. Grain belongs to projected light only.</div>
+    <div class="cap" style="margin-bottom:12px">During the film</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--dim)">Chat is the default surface and it stays put. It is the murmur of the room, so it sits at the bottom where a murmur belongs.</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--dim);margin-top:15px">When a note fires it takes the light and chat drops to a strip, so the note is the one thing you read. A few seconds later chat comes back.</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--dimmer);margin-top:15px">The film is playing on your television. This screen stays dark so it never competes with it.</div>
   </div>
 </div>
   </div>
