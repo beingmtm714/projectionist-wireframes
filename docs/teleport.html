@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Teleport Analysis · Projectionist</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@300..600&family=Source+Serif+4:opsz,wght@8..60,300..600&display=swap">
+<style>
+  :root{--paper:#e7e3da;--card:#f2efe8;--ink:#1a1917;--ink-soft:#57534a;--ink-faint:#8a8477;
+    --line:rgba(0,0,0,.12);--board:#14110b;--board-line:#453a26;--bulb:#f4e4bc;--pink:#a01a86}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Hanken Grotesk',-apple-system,system-ui,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:16px;
+    padding:11px 16px;background:var(--paper);border-bottom:1px solid var(--line)}
+  .bar a{color:var(--ink-soft);text-decoration:none}
+  .bar a:hover{color:var(--pink)}
+  .bar .who{flex:1;min-width:0;display:flex;align-items:baseline;gap:10px}
+  .bar .name{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-weight:700;
+    font-size:14px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+  .bar .meta,.bar .back{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  main{max-width:720px;margin:0 auto;padding:44px 24px 80px}
+  .doc h1{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-weight:800;
+    font-size:clamp(26px,6vw,38px);letter-spacing:.03em;text-transform:uppercase;
+    margin:0 0 6px;line-height:1.05}
+  .stamp{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink-faint);margin-bottom:30px}
+  .toc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin-bottom:34px}
+  .toc ol{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+  .toc li{break-inside:avoid;margin:0 0 5px}
+  .toc a{font-size:13.5px;color:var(--ink-soft);text-decoration:none}
+  .toc a:hover{color:var(--pink)}
+  .doc h2{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-weight:800;font-size:13px;
+    letter-spacing:.14em;text-transform:uppercase;margin:46px 0 0;padding-bottom:9px;
+    border-bottom:1px solid var(--line);scroll-margin-top:60px}
+  .doc h3{font-size:17px;font-weight:700;margin:32px 0 0;scroll-margin-top:60px}
+  .doc h4{font-size:14px;font-weight:700;margin:24px 0 0;color:var(--ink-soft)}
+  .doc p{margin:12px 0;max-width:66ch}
+  .doc ul,.doc ol{margin:12px 0;padding-left:20px;max-width:66ch}
+  .doc li{margin:6px 0}
+  .doc hr{border:0;border-top:1px solid var(--line);margin:38px 0}
+  .doc blockquote{margin:16px 0;padding:2px 0 2px 16px;border-left:2px solid var(--line);
+    font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--ink-soft);max-width:62ch}
+  .doc code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.86em;
+    background:rgba(0,0,0,.055);padding:1px 5px;border-radius:3px}
+  .doc pre{background:var(--board);color:#d8cfae;padding:14px 16px;border-radius:8px;overflow-x:auto}
+  .doc pre code{background:none;color:inherit;padding:0;font-size:12.5px;line-height:1.55}
+  .doc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(0,0,0,.28)}
+  .doc a:hover{color:var(--pink);border-color:var(--pink)}
+  .doc a.xref{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.84em;
+    background:rgba(160,26,134,.07);border-bottom:1px solid rgba(160,26,134,.35);
+    padding:1px 5px;border-radius:3px}
+  .tw{overflow-x:auto;margin:18px 0}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-faint);font-weight:400;white-space:nowrap}
+  .pager{display:flex;justify-content:space-between;gap:16px;margin-top:56px;
+    border-top:1px solid var(--line);padding-top:18px;
+    font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase}
+  .pager a{color:var(--ink-soft);text-decoration:none}
+  .pager a:hover{color:var(--pink)}
+  .pager span{color:#bdb8ac}
+  @media (max-width:620px){.toc ol{columns:1}.bar .meta{display:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+<header class="bar">
+  <a class="back" href="./">← Documents</a>
+  <div class="who"><span class="name">Teleport Analysis</span></div>
+  <span class="meta">29 August 2026</span>
+</header>
+<main class="doc">
+<h1>Teleport Analysis</h1>
+<div class="stamp">The architecture options, and why companion mode won.</div>
+<nav class="toc"><ol><li><a href="#michael-x27-s-call-18-august-2026">Michael&amp;#x27;s call, 18 August 2026</a></li><li><a href="#the-headline">The headline</a></li><li><a href="#three-architectures">Three architectures</a></li><li><a href="#obviated-only-under-a-film-in-the-browser">Obviated only under (a), film in the browser</a></li><li><a href="#option-c-projectionist-streams-the-viewer-airplays">Option (c): Projectionist streams, the viewer AirPlays</a></li><li><a href="#the-recommendation-dual-mode-companion-by-default">The recommendation: dual mode, companion by default</a></li><li><a href="#ben-x27-s-defensibility-points-worth-keeping-regardless-of-a">Ben&amp;#x27;s defensibility points, worth keeping regardless of architecture</a></li><li><a href="#obviated-under-either-architecture">Obviated under either architecture</a></li><li><a href="#not-obviated-under-any-architecture">Not obviated under any architecture</a></li><li><a href="#newly-enabled-which-is-the-more-interesting-half">Newly enabled, which is the more interesting half</a></li><li><a href="#risks-worth-naming-before-the-next-call">Risks worth naming before the next call</a></li><li><a href="#what-this-changes-this-week">What this changes this week</a></li></ol></nav>
+<p><strong>Companion mode is the architecture of record and the spec is built on it. Option (a), the film loading in the Teleport browser, is dead. What is still open is only whether Teleport is worth a dependency for chat and presence under the companion page, which turns on the phone question below. Nothing here gates the build, and Teleport is deliberately absent from the investor deck.</strong></p>
+<p>Working note, 18 August 2026. Source: the Michael / Ben Palmer call of 13 August 2026, transcript at <code>Meetings/Transcripts/2026-08-13-1031-granola-both-sides.md</code>, notes at <code>Meetings/2026-08-13 Projectionist x Teleport (Ben).md</code>. Measured against <a class="xref" href="./product-spec.html">Projectionist-Product-Spec.md</a>.</p>
+<h2 id="michael-x27-s-call-18-august-2026">Michael&#x27;s call, 18 August 2026</h2>
+<p><strong>Option (a), the film loading in the Teleport browser, is out.</strong> Three reasons, in his words: the rights deals make GTM far too slow, it is desktop only when most people watch a movie at home with a phone in their hand and not a laptop, and synchronous streaming is not a large enough value add to carry those two costs.</p>
+<p><strong>Option (c) came out of that.</strong> If Projectionist serves the stream itself and the viewer AirPlays it to the television, the phone stays free as the second screen. That answers the desktop objection without giving up synchronous playback. Detailed below, along with the recommendation, which is to run companion mode as the default and treat streamed sessions as a small, negotiated exception.</p>
+<p>The trade under companion mode, accepted knowingly: intermission stays unsolved. Controlled playback is the thing that fixes it, and on 6 August Michael called it the hard problem. Any session that runs companion mode keeps intermission as a social contract with good instrumentation.</p>
+<p><strong>The spec stays architecture neutral</strong> until Michael, James, and Ben have talked. No Teleport dependency goes into <a class="xref" href="./product-spec.html">Projectionist-Product-Spec.md</a>.</p>
+<p><strong>The open question that now decides everything.</strong> The phone objection does not only apply to (a). Teleport&#x27;s group doorway can add multiplayer features to a Projectionist page without the app, per Ben: &quot;we could do teleport.projectionist.com and that adds the multiplayer social features to your website. You can&#x27;t leave as a group without the browser.&quot; He never said whether that doorway runs on a phone. If it works in mobile Safari, option (b) is alive, cheap, and touches neither rights nor GTM. If it needs the desktop app, Teleport is a partner for a later product and this call becomes a different conversation.</p>
+<p><strong>Ask Ben first, before anything else on the agenda: does the teleport.projectionist.com doorway work on a phone browser today, and if not, what is the mobile timeline.</strong></p>
+<p>What stays valuable from Ben either way, none of it requiring his browser: the restreaming framing, the guest-pass and group day-rental business he handed over as the defensible piece, and his read that one-off deals with a streamer, a studio, Roku, Pluto, or Tubi are the realistic way into rights.</p>
+<hr>
+<h2 id="the-headline">The headline</h2>
+<p><strong>Nothing in the V1 curator build is obviated.</strong> The curator tools, which are the whole of V1, sit entirely outside what Teleport does: the account, session creation, the research agent, ask other experts, the note editor and its timestamping, the note queue, the promo kit, the confirmation state, and the dry run. That is section 6 of the spec, and sprints one through three. Everything Teleport replaces lives in the audience night, section 7, which the spec already deferred behind the curator beta. <em>The spec was written in phases when this note was drafted; it is sections and sprints now, and the mapping above is the current one.</em></p>
+<p>So the build starts now and the Teleport decision does not gate it. That is the practically useful answer.</p>
+<p>Ben drew the same line himself, unprompted: &quot;all the work is going to be the creative work, the business relationships, the like how do we make this a good experience,&quot; and later, &quot;I&#x27;m solving my area of the hard part, but I can&#x27;t solve the whole hard part. It&#x27;s just not my field.&quot;</p>
+<h2 id="three-architectures">Three architectures</h2>
+<p>The obviation list depends entirely on which of these gets built, and the Ben call covered the first two without ever separating them.</p>
+<p><strong>(a) Full Teleport. The film loads in the Teleport browser and everyone watches it together in the same window.</strong> This is what Ben meant by &quot;we&#x27;ve solved that.&quot; He has a synchronized player already, built against Jellyfin, plus peer-to-peer video chat, presence, and group navigation.</p>
+<p><strong>(b) Teleport as multiplayer infrastructure underneath the companion page.</strong> The film stays on the viewer&#x27;s own TV, exactly as the spec has it, and Projectionist&#x27;s second screen becomes a Teleport-multiplayer web page. Ben described this as the low-effort path: &quot;you would need to build web pages that we go to with the teleport browser that just use our API that make it multiplayer. It&#x27;s not hard. We&#x27;ll have an API that you just point Claude at and done.&quot;</p>
+<p><strong>(c) Projectionist streams the film and the viewer AirPlays it to the television.</strong> Not discussed with Ben. Michael&#x27;s, 18 August. Synchronous playback and a free phone, at the cost of rights and streaming operations.</p>
+<p>Option (b) is in the transcript and is easy to skip past, because Ben and Michael slid between the two for most of the call. It matters, because (b) keeps the spec&#x27;s premise intact and (a) inverts it.</p>
+<p><strong>One correction about (b) before anyone builds against it.</strong> Teleport has two modalities on two different timelines. The small-group one is built and in private beta, and Ben was explicit about its shape: &quot;small groups, people you already know, two to eight people. We&#x27;re not pairing up strangers. We&#x27;re not helping you find each other.&quot; The broadcast one, a single host to a large audience, was unbuilt as of 13 August and is his next project. The wireframes show 142 in the room, which is the broadcast layer, not the group layer. So (b) delivers pod-sized presence today and room-sized presence only once Teleport ships something that does not yet exist.</p>
+<h2 id="obviated-only-under-a-film-in-the-browser">Obviated only under (a), film in the browser</h2>
+<p><strong>The intermission problem.</strong> The single biggest open question in the spec and the one Michael flagged on the JD call as the hard one. Companion mode cannot pause a television, so the spec&#x27;s answer is a social contract with good instrumentation: a countdown, explicit copy telling the viewer to pause their own screen, and an &quot;I&#x27;ve paused my TV&quot; tap feeding a resumed counter. With the film in the browser, group pause is a real mechanism. The countdown, the copy, the tap, the counter, and the honest-limitation language all go away.</p>
+<p><strong>Reel change and resync (1d⑨).</strong> Drift stops being a design problem to absorb gracefully. Ben: &quot;your little group that&#x27;s watching this live thing could pause the live thing and fall out of sync with the universe and it would still be fine. It&#x27;s like a DVR version of this thing.&quot;</p>
+<p><strong>The session clock as the sole sync mechanism.</strong> The spec fires notes off elapsed time from a shared start_time because it has no other option. With real playback sync, notes fire against actual film position.</p>
+<p><strong>The always-on-screen title and timecode reassurance.</strong> That design exists because a viewer might have drifted and needs to know where the room is. Less load-bearing when the player is shared.</p>
+<p><strong>The JustWatch, deep-link, and AirPlay flow (spec 7.3).</strong> Built to answer &quot;can you even play this, and how do you get it onto your TV.&quot; If the film is in the browser, that question changes shape, though it does not disappear, see the rights swap below.</p>
+<p><strong>The declared-services onboarding step (spec 7.1).</strong> Same reason. It exists to power the availability check.</p>
+<h3 id="what-a-costs-stated-plainly">What (a) costs, stated plainly</h3>
+<p><strong>Teleport does not delete the hard problem. It trades the sync problem for the rights problem.</strong> Companion mode&#x27;s entire premise is no rights, no deals, no player API, which is why the spec says it works against Netflix, MUBI, a rented file, or a disc with no partnership required. Putting the film in the browser means someone has to have the right to put it there.</p>
+<p>Ben&#x27;s own answer was one-off deals: &quot;you could do deals with whomever, a streamer or a studio or like Roku or Pluto or one of those. Get Karina to do one a month and you just negotiate one a month. Do a few of those and prove the point and then you shop it around to the studios.&quot; Michael has the Tubi director of AI as a possible first door. That is a real path and it is also the thing that turns Projectionist from a product that can launch on its own into a product that launches when a rights conversation closes.</p>
+<p><strong>Form factor.</strong> The wireframes are a phone held next to a television. Teleport&#x27;s first generation is a desktop browser. Under (a) the entire audience design moves to a desktop window and the second-screen premise, which the wireframes are built around, is gone.</p>
+<h2 id="option-c-projectionist-streams-the-viewer-airplays">Option (c): Projectionist streams, the viewer AirPlays</h2>
+<h3 id="how-it-works">How it works</h3>
+<p>Media routing, not screen mirroring. Mirroring throws the whole phone screen at the television and would defeat the purpose. Media routing sends only the video element to the Apple TV and leaves the page live on the phone, which is what YouTube, Netflix, and Prime Video do when you cast from them. It works from a web page as well as a native app: an HTML5 video in mobile Safari hands the stream to AirPlay while the rest of the page stays fully interactive and the video element shows a &quot;playing on Apple TV&quot; placeholder. Chromecast provides the same pattern on Android, which is required, since AirPlay is Apple only.</p>
+<p>The viewer&#x27;s experience: open the session on the phone, press play, send the picture to the television, and keep the room, the chat, and the Liner Notes in hand. Nothing about the wireframes changes.</p>
+<h3 id="what-it-solves">What it solves</h3>
+<p>Synchronous playback with no drift, because everyone is on one stream. <strong>Intermission becomes a real mechanism rather than a social contract</strong>, since the player is Projectionist&#x27;s to pause. Reel change and resync become trivial. The desktop objection disappears entirely. And it needs no Teleport, since serving the stream means owning the sync.</p>
+<h3 id="what-it-does-not-solve">What it does not solve</h3>
+<p><strong>Rights.</strong> Serving the stream means holding distribution rights to the film. That is the same wall, the same deal-by-deal grind, and the same slow GTM that ruled out (a). AirPlay changes the form factor and not the licensing.</p>
+<p><strong>It makes Projectionist a streaming operator.</strong> FairPlay DRM and a license server, encoding and packaging, CDN bandwidth per viewer, adaptive bitrate, and playback QA across a long tail of devices and receivers. Ben&#x27;s cost observation applies here too: streaming is the expensive part of his stack and the part he deliberately gates.</p>
+<h3 id="the-constraint-that-matters-most-and-it-is-editorial">The constraint that matters most, and it is editorial</h3>
+<p>Companion mode&#x27;s quiet superpower is that every film ever made is already in the catalog, because the viewer brings their own copy. A curator programs whatever she wants. The moment Projectionist serves the stream, she can only program what has been cleared, and the pitch degrades from &quot;program what you love&quot; to &quot;program from these forty titles.&quot; For a product whose entire value is one person&#x27;s taste, that is a serious amputation, and it lands hardest on exactly the curators worth recruiting.</p>
+<h3 id="the-legal-point-which-cuts-the-same-way">The legal point, which cuts the same way</h3>
+<p>Ben&#x27;s sharpest observation was about why Twitch cannot get an NFL deal: &quot;technically they are rebroadcasting the content. And we&#x27;re a browser, so we&#x27;re always loading the content from the source. It&#x27;s a tech partnership, not a restreaming, not a broadcast partnership.&quot;</p>
+<p>Companion mode has that same property and it is worth naming as an asset rather than a limitation. Projectionist never touches the film, which makes it the cleanest possible counterparty for a studio or a streamer. <strong>Option (c) gives that up.</strong> A streamed session is a rebroadcast, with everything that follows in the negotiation. The thing that makes companion mode look commercially thin is the same thing that makes it legally frictionless.</p>
+<h2 id="the-recommendation-dual-mode-companion-by-default">The recommendation: dual mode, companion by default</h2>
+<p>Build both. Run companion mode as the default and streamed sessions as a small, explicitly negotiated exception.</p>
+<p><strong>Companion sessions</strong>, the overwhelming majority: the viewer watches on their own MUBI, Netflix, or disc, exactly as the spec has it. No rights, no bandwidth cost, unlimited catalog, and a clean legal posture with content owners.</p>
+<p><strong>&quot;Projectionist presents&quot; sessions</strong>, a handful: a title has been cleared, so the film streams in-app and the viewer AirPlays it out. Marquee events, perhaps one a month, which is precisely the shape Ben suggested for one-off deals with Tubi, Pluto, or Roku. These are also the sessions where intermission works properly, which makes them the right venue for anything ambitious.</p>
+<p><strong>The wireframes absorb this with almost no change</strong>, which is the strongest argument for it. The Lobby, the Room, the Liner Notes, chat, intermission, and the recap are identical in both modes. The only screen that differs is session detail (1g), where &quot;make sure you can play it&quot; either lists where the viewer can find the film or simply says press play here. The mode is nearly invisible to the audience and completely invisible to the curator tools, so V1 is unaffected either way.</p>
+<p><strong>One correction to the obviation list above.</strong> The declared-services step in onboarding (spec 7.1) is listed as obviated under (a). Under dual mode it returns, and it becomes strategically valuable rather than merely functional. See the next section.</p>
+<p><strong>One implementation note for either mode.</strong> Keep the session clock server-authoritative rather than deriving it from player position. iOS throttles JavaScript in backgrounded tabs, so a phone that locks mid-film has to resync on resume rather than drift in silence. The spec already works this way and it should stay that way.</p>
+<h2 id="ben-x27-s-defensibility-points-worth-keeping-regardless-of-a">Ben&#x27;s defensibility points, worth keeping regardless of architecture</h2>
+<p>None of these depend on Teleport, on his browser, or on any partnership. They are the most valuable thing to come out of that call.</p>
+<p><strong>Guest passes and group day rentals.</strong> Ben&#x27;s own strongest suggestion, and he handed it over deliberately: &quot;if I can offer a twist, especially with your partner being who your partner is, that I think is a heavy lift to this idea that requires somebody that knows the industry, which is what you ought to be doing because that&#x27;s defensible.&quot; The above-board version is a streamer letting a subscriber bring friends who stay with them, in exchange for first-party data on who those friends are. His precedent is the New York Times guest article link. He says he has shown it to the New York Times, the NFL, and the NBA and they are interested. This is a business, and it is closer to James&#x27;s relationships than to anything technical.</p>
+<p><strong>Subscription visibility as a social surface.</strong> &quot;There&#x27;s no social surface on the internet where I can look at your profile and know what subscriptions you have. IRL I can be like, I&#x27;m a member of this club, let&#x27;s go. And we hang out because I can get us here and you can bring us there. We don&#x27;t really have that in the digital world.&quot;</p>
+<p>Projectionist is already building this and has not noticed. The declared-services step in onboarding (spec 7.1) exists to answer &quot;can you play tonight&#x27;s film,&quot; but what it actually produces is a map of who has access to what. That is the substrate for access-driven gathering, for upselling subscriptions, and for telling a streamer how many of your audience are not yet their subscribers. Keep the data model general enough to support it.</p>
+<p><strong>Access as the thing that gathers people.</strong> Ben&#x27;s framing that the invitation is the product: &quot;you&#x27;ve got the tickets for this thing and you can bring a few people with you, and the access kind of gathers people.&quot; That is a different growth mechanic from following a curator, and it fits a product built on reserving seats.</p>
+<p><strong>First-party data as the currency for deals.</strong> &quot;If we&#x27;re giving our audience some cool access, I think it&#x27;s a fair trade for the content owner to get some access to who&#x27;s in the audience. And I know they want that.&quot; A curator-led screening produces something a streamer cannot get from a normal viewing session: an attributable, opted-in audience with a reason for being there. That is what Projectionist brings to a rights conversation beyond money.</p>
+<p><strong>Contained access as the argument that makes a studio comfortable.</strong> &quot;It&#x27;s very contained from an internet security perspective. We&#x27;re not sharing a password that somebody could grab and run away with. We know who all the guests are.&quot; Whatever the architecture, the pitch to a rights holder should lead with knowing exactly who is in the room.</p>
+<p><strong>Restreaming as a category, and the flywheel.</strong> &quot;Netflix is a streamer, but Karina is a restreamer. She&#x27;s not negotiating with the studios, but maybe through you she&#x27;s negotiating with the streamers to be able to be a selector.&quot; The scaled version is many curators running their own channels, all sourced through Projectionist&#x27;s deals. Ben on why it is defensible once it exists: &quot;the back end of making the restreaming possible is inside baseball, requires a certain amount of legwork up front, and then at a certain point it&#x27;s a flywheel and it changes the industry.&quot;</p>
+<p><strong>Interactive sponsorship.</strong> The spec reserves a slot for a sponsored bar. Ben&#x27;s version is taking the room somewhere for two minutes, which he estimates converts at a hundred times a podcast promo code: &quot;you&#x27;ve got everyone on the line with you right now and you&#x27;re like, let me just take you to our sponsor&#x27;s website. And everybody just goes there and you&#x27;re in the store.&quot; The full version needs his browser. A weaker version, an in-page sponsor panel the curator triggers, does not, and is worth designing for.</p>
+<p><strong>And the line worth remembering when the partnership question comes up.</strong> On building the industry-facing side himself: &quot;I don&#x27;t really want to do that. I&#x27;m only going to do that if nobody&#x27;s going to.&quot;</p>
+<h2 id="obviated-under-either-architecture">Obviated under either architecture</h2>
+<p><strong>Chat, presence, and the audience grouping mechanic.</strong> Ben was direct: &quot;the thing that you&#x27;re missing from this is gathering the audience, and that&#x27;s essentially what we&#x27;re building right now. From your point of view, we&#x27;re building the audience grouping mechanic.&quot; Under either path this replaces the spec&#x27;s chat_messages plumbing, realtime chat delivery, throttling, the join and leave ticker, the seat presence model, and eventually chat moderation.</p>
+<p><strong>Video chat and social presence.</strong> Never in the spec, and now available without building it. Peer-to-peer, so no bandwidth cost to anyone.</p>
+<p><strong>The realtime event layer.</strong> session_start, message, reaction, group_pause and their transport. The note-firing events stay Projectionist&#x27;s, but the pipe is Teleport&#x27;s. Ben&#x27;s model for how timed content rides along: &quot;those are like hyperlinks on a timeline. It&#x27;s like an EDL. HTML EDL.&quot; That is the liner note queue described in his vocabulary.</p>
+<p><strong>Distribution, partially.</strong> Teleport&#x27;s social calendar surfaces sessions to Teleport users. Not the Marquee, which stays Projectionist&#x27;s programming surface, but a second front door with traffic behind it.</p>
+<p><strong>The Lobby&#x27;s reason for existing gets stronger, not weaker.</strong> Ben independently arrived at the pre-show hang as the point: &quot;the problem with any of the watch together stuff is that it&#x27;s ignoring how real life actually works. If you come over to my house to watch a movie, you don&#x27;t just show up, we hit play, and then you leave.&quot; His 3D Blockbuster video store connected to Jellyfin is that idea built. The Lobby is not obviated. It is validated and could be considerably weirder.</p>
+<h2 id="not-obviated-under-any-architecture">Not obviated under any architecture</h2>
+<p>The curator tools in full. The research agent and its source discovery. Ask other experts. Note authoring, timestamping, and the queue. The dry run. Content rights and the deals behind them. Curator recruiting and the B2B2C relationships, which is James&#x27;s half. The editorial format of a liner note. The brand, the design language, and the Marquee. The Taste Passport, the recap, and Film DNA.</p>
+<p>Ben&#x27;s framing of the split, which is worth holding onto because it is also the answer to whether this dilutes the company: &quot;we want to work with other people to build the experiences within that. We want to stay browser-y.&quot;</p>
+<h2 id="newly-enabled-which-is-the-more-interesting-half">Newly enabled, which is the more interesting half</h2>
+<p>These do not exist in any version of the spec and are only possible with Teleport.</p>
+<p><strong>Curator-driven tab popping.</strong> The curator pauses and takes the whole room somewhere: Google Maps for a filming location, a recipe for the sandwich in the scene, an archive page. Everyone lands there together and everyone can interact. This is a new Liner Note type, not a variant of the existing one, and it is the strongest argument for the partnership. Ben: &quot;when we get somewhere that&#x27;s interactive, everyone in the audience can interact. That&#x27;s the dimension that&#x27;s missing right now from the internet.&quot;</p>
+<p><strong>Recorded commentary as a track.</strong> Michael&#x27;s own idea on the call was that the curator presets the notes and does not need to be live. Ben went further: record the curator watching and talking, chop it up, run it on the air while she sits in the text chat live. Then let each viewer toggle the commentary track off and just watch the film. That is a director&#x27;s commentary product, and it changes what a Liner Note is.</p>
+<p><strong>Restreaming as a category.</strong> Ben&#x27;s word: &quot;Netflix is a streamer, but Karina is a restreamer. She&#x27;s not negotiating with the studios, but maybe through you she&#x27;s negotiating with the streamers to be able to be a selector.&quot; The scaled version is curators running their own channels, sourced through Projectionist&#x27;s deals. He also named the operational trick that makes it cheap: a one-minute-to-infinite DVR delay sits in a different Cloudflare server architecture than true realtime and costs far less, which fits perfectly because the commentary was recorded in advance anyway.</p>
+<p><strong>Sponsorship that converts.</strong> The spec reserves a slot for a sponsored bar. Ben&#x27;s version is taking the room to the sponsor&#x27;s site for two minutes mid-session. He estimates a hundred times the conversion of a podcast promo code. &quot;Your audience can go to the concession stand during the intermission.&quot;</p>
+<p><strong>Guest passes and group day rentals.</strong> Ben&#x27;s strongest strategic suggestion, and he explicitly handed it over: &quot;if I can offer a twist, especially with your partner being who your partner is, that I think is a heavy lift to this idea that requires somebody that knows the industry, which is what you ought to be doing because that&#x27;s defensible.&quot; He has cookie and login sharing built as a gray-area simulation, with an above-board endpoint: a streamer lets you bring friends who stay with you, in exchange for first-party data on who they are. He says the New York Times, the NFL, and the NBA are interested.</p>
+<h2 id="risks-worth-naming-before-the-next-call">Risks worth naming before the next call</h2>
+<p><strong>Teleport is pre-launch.</strong> Ben plus Aubrey plus some support staff. Private beta starting the week of Aug 13. His own words on runway: &quot;we got a little money, like not enough to roll with forever right now, but it&#x27;s getting us to launch.&quot; The broadcast feature, which is the piece Projectionist actually depends on, was unbuilt as of the call and was his next build. A platform dependency on an unlaunched two-person product is the real risk here, larger than any technical question.</p>
+<p><strong>Install friction is softer than it first looks, but it is not zero.</strong> The single-site experience works without the app: &quot;you don&#x27;t actually need the browser. You need the browser if we want to go somewhere else afterwards and stay together.&quot; So attending a screening at teleport.projectionist.com does not require an install; leaving together does. That is a milder conflict with the spec&#x27;s deliberate no-install stance than it appears, and it is still a conflict, since the spec chose that stance specifically against Scener, whose extension is the most-cited friction in its own reviews.</p>
+<p><strong>The gray area.</strong> Cookie and login sharing to jump paywalls is live in Teleport today as a simulation of the above-board version. James&#x27;s industry relationships are the defensible asset in this company. Adjacency to paywall-jumping, even framed as a stepping stone, is worth one deliberate conversation before it shows up in a studio meeting.</p>
+<p><strong>Partner or competitor.</strong> Ben said both things in the same minute. &quot;I think we could just kind of do this together somehow,&quot; and then, on building the industry-facing side himself, &quot;I don&#x27;t really want to do that. I&#x27;m only going to do that if nobody&#x27;s going to.&quot; He is signalling he would rather Projectionist own it. That is favorable and it is also a clock.</p>
+<h2 id="what-this-changes-this-week">What this changes this week</h2>
+<p>Nothing about the build. Start the repository on the V1 curator scope.</p>
+<p>What it changes is the next call. Ben said &quot;give me till Monday&quot; to put a time on the calendar, which was 18 August. That ping is due. The thing to walk in knowing is which architecture is being discussed, because &quot;should we build on Teleport&quot; has two different answers and the call will slide between them otherwise.</p>
+<p>Option (a) is out. The live questions are whether Teleport is worth a dependency for chat, presence, and grouping under a phone page, which turns on the mobile answer above and on when their broadcast layer ships, and whether to build the dual-mode streaming path at all.</p>
+<p>The recommendation to bring to James: companion mode stays the default and the architecture of record, streamed sessions become a negotiated exception for a handful of cleared titles, and the Teleport conversation narrows to infrastructure under the companion page plus the defensibility ideas Ben handed over, which cost nothing and need no partnership.</p>
+<hr>
+<p><em>Related: <a class="xref" href="./product-spec.html">Projectionist-Product-Spec.md</a>, <code>Meetings/2026-08-06 Projectionist Wireframe Review (James DeJulio).md</code>.</em></p>
+<nav class="pager"><a href="./short-copy.html">← Short Copy</a><span></span></nav>
+</main>
+</body>
+</html>
